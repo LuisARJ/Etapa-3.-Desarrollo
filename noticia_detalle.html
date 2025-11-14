@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Madrid clasifica a la final - All Sports Network</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #F4F6F6;
+            color: #2C3E50;
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1C2833 0%, #2E75B5 100%);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #5EA8A7, #2E75B5);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+        
+        .nav {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: background-color 0.2s;
+        }
+        
+        .nav a:hover {
+            background-color: rgba(255,255,255,0.15);
+        }
+        
+        /* Article */
+        .article-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .article-image {
+            width: 100%;
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .article-content {
+            padding: 40px;
+        }
+        
+        .breadcrumb {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .breadcrumb a {
+            color: #2E75B5;
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        .article-category {
+            display: inline-block;
+            background: #2E75B5;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .article-title {
+            font-size: 40px;
+            font-weight: bold;
+            color: #1C2833;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .article-meta {
+            display: flex;
+            gap: 20px;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #E0E0E0;
+        }
+        
+        .article-body {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #2C3E50;
+        }
+        
+        .article-body p {
+            margin-bottom: 20px;
+        }
+        
+        .article-body h2 {
+            font-size: 28px;
+            color: #1C2833;
+            margin: 30px 0 15px;
+        }
+        
+        .article-body blockquote {
+            border-left: 4px solid #2E75B5;
+            padding-left: 20px;
+            margin: 30px 0;
+            font-style: italic;
+            color: #555;
+        }
+        
+        .share-buttons {
+            display: flex;
+            gap: 15px;
+            margin: 40px 0;
+            padding: 20px 0;
+            border-top: 1px solid #E0E0E0;
+            border-bottom: 1px solid #E0E0E0;
+        }
+        
+        .share-btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        
+        .share-btn:hover {
+            opacity: 0.8;
+        }
+        
+        .share-facebook {
+            background: #1877F2;
+            color: white;
+        }
+        
+        .share-twitter {
+            background: #1DA1F2;
+            color: white;
+        }
+        
+        .share-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+        
+        /* Related News */
+        .related-news {
+            max-width: 1440px;
+            margin: 60px auto;
+            padding: 0 60px;
+        }
+        
+        .related-title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #1C2833;
+            margin-bottom: 30px;
+        }
+        
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        
+        .news-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+        
+        .news-image {
+            width: 100%;
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .news-content {
+            padding: 20px;
+        }
+        
+        .news-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1C2833;
+            margin-bottom: 10px;
+        }
+        
+        .news-meta {
+            display: flex;
+            gap: 15px;
+            color: #666;
+            font-size: 13px;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #1C2833;
+            padding: 40px 60px;
+            color: white;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            max-width: 1440px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            color: rgba(255,255,255,0.5);
+            font-size: 14px;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+        
+        /* Back button */
+        .back-button {
+            display: inline-block;
+            color: #2E75B5;
+            text-decoration: none;
+            font-size: 16px;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #E8F4F8;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+        
+        .back-button:hover {
+            background: #D0E8F0;
+        }
+        
+        @media (max-width: 768px) {
+            .article-container {
+                margin: 20px;
+            }
+            
+            .article-content {
+                padding: 20px;
+            }
+            
+            .article-title {
+                font-size: 28px;
+            }
+            
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .related-news {
+                padding: 0 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="All_Sports_Network_Website.html" class="logo">
+                <div class="logo-icon">🏆</div>
+                <span>All Sports Network</span>
+            </a>
+            <nav class="nav">
+                <a href="All_Sports_Network_Website.html#home">Inicio</a>
+                <a href="All_Sports_Network_Website.html#noticias">Noticias</a>
+                <a href="All_Sports_Network_Website.html#partidos">Partidos</a>
+                <a href="All_Sports_Network_Website.html#equipos">Equipos</a>
+                <a href="All_Sports_Network_Website.html#calendario">Calendario</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Article -->
+    <div style="max-width: 1440px; margin: 0 auto; padding: 40px 60px;">
+        <a href="All_Sports_Network_Website.html" class="back-button">← Volver al inicio</a>
+    </div>
+    
+    <article class="article-container">
+        <div class="article-image" style="background-image: url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200&h=500&fit=crop&q=80');"></div>
+        
+        <div class="article-content">
+            <div class="breadcrumb">
+                <a href="All_Sports_Network_Website.html">Inicio</a> / 
+                <a href="All_Sports_Network_Website.html#noticias">Noticias</a> / 
+                <span>Fútbol</span>
+            </div>
+            
+            <span class="article-category">⚽ Fútbol</span>
+            
+            <h1 class="article-title">Real Madrid clasifica a la final de Champions League</h1>
+            
+            <div class="article-meta">
+                <span>👤 Por Juan Pérez</span>
+                <span>📅 28 de Octubre, 2025</span>
+                <span>⏰ Hace 2 horas</span>
+                <span>👁️ 15,234 lecturas</span>
+            </div>
+            
+            <div class="article-body">
+                <p>
+                    <strong>MANCHESTER</strong> - En una noche épica en el Etihad Stadium, el Real Madrid selló su pase a la final de la UEFA Champions League 2024-2025 tras vencer 3-1 al Manchester City en la vuelta de las semifinales, logrando un global de 5-3 que confirma su clasificación a la gran final que se disputará en Estambul.
+                </p>
+                
+                <p>
+                    El conjunto merengue, dirigido por Carlo Ancelotti, supo manejar la presión en casa del vigente campeón inglés y con una actuación de antología logró imponerse ante uno de los mejores equipos del continente.
+                </p>
+                
+                <h2>Primer Tiempo Espectacular</h2>
+                
+                <p>
+                    El partido comenzó con un ritmo vertiginoso. El Real Madrid salió con la mentalidad de llevarse la victoria en territorio inglés y no tardó en golpear. A los 12 minutos, Vinícius Jr. recibió un pase magistral de Luka Modrić y con un regate imposible dejó atrás a dos defensores para anotar el primero.
+                </p>
+                
+                <blockquote>
+                    "Sabíamos que teníamos que ser valientes y arriesgar. El equipo estuvo perfecto desde el primer minuto." - Carlo Ancelotti
+                </blockquote>
+                
+                <p>
+                    El Manchester City respondió inmediatamente y a los 25 minutos empató el marcador mediante un gol de cabeza de Erling Haaland. Sin embargo, el Real Madrid no se desmoronó y antes del descanso, Jude Bellingham puso el 2-1 con un disparo desde fuera del área que se coló por la escuadra.
+                </p>
+                
+                <h2>Segunda Mitad: Definición y Control</h2>
+                
+                <p>
+                    El segundo tiempo fue un monólogo del Real Madrid. Con un mediocampo dominado por Modrić, Tchouaméni y Bellingham, el equipo español controló el ritmo del partido y no permitió que el City generara ocasiones claras.
+                </p>
+                
+                <p>
+                    El gol que sentenció el encuentro llegó al minuto 78, cuando Rodrygo aprovechó un contragolpe perfecto para poner el definitivo 3-1. El Santiago Bernabéu tendrá la oportunidad de celebrar con su equipo cuando se juegue la final el próximo mes.
+                </p>
+                
+                <h2>Declaraciones Post Partido</h2>
+                
+                <p>
+                    Carlo Ancelotti, técnico del Real Madrid, destacó en conferencia de prensa: "Este equipo tiene ADN ganador. Sabíamos que enfrentábamos a un rival durísimo, pero los jugadores estuvieron a la altura de las circunstancias."
+                </p>
+                
+                <p>
+                    Por su parte, Pep Guardiola, técnico del Manchester City, reconoció la superioridad del rival: "El Real Madrid nos superó en todos los aspectos. Merecieron pasar y les deseo suerte en la final."
+                </p>
+                
+                <h2>El Camino a Estambul</h2>
+                
+                <p>
+                    Con esta victoria, el Real Madrid disputará su final número 18 en la historia de la competición, buscando su decimoquinto título europeo. El rival saldrá del encuentro entre Bayern Munich e Inter de Milán que se jugará mañana.
+                </p>
+                
+                <p>
+                    La final está programada para el 31 de mayo en el Atatürk Olympic Stadium de Estambul, el mismo escenario que vio la legendaria remontada del Liverpool en 2005.
+                </p>
+            </div>
+            
+            <div class="share-buttons">
+                <button class="share-btn share-facebook">📘 Compartir en Facebook</button>
+                <button class="share-btn share-twitter">🐦 Compartir en Twitter</button>
+                <button class="share-btn share-whatsapp">📱 Compartir en WhatsApp</button>
+            </div>
+        </div>
+    </article>
+
+    <!-- Related News -->
+    <section class="related-news">
+        <h2 class="related-title">📰 Noticias Relacionadas</h2>
+        <div class="news-grid">
+            <div class="news-card" onclick="window.location.href='All_Sports_Network_Website.html'">
+                <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=360&h=180&fit=crop&q=80');"></div>
+                <div class="news-content">
+                    <div class="news-title">Champions League: Resumen de la jornada</div>
+                    <div class="news-meta">
+                        <span>⚽ Fútbol</span>
+                        <span>⏰ Hace 5 horas</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="news-card" onclick="window.location.href='All_Sports_Network_Website.html'">
+                <div class="news-image" style="background: linear-gradient(135deg, rgba(240, 147, 251, 0.6) 0%, rgba(245, 87, 108, 0.6) 100%), url('https://images.unsplash.com/photo-1546519638-68e109498ffc?w=360&h=180&fit=crop&q=80'); background-size: cover; background-position: center; background-blend-mode: overlay;"></div>
+                <div class="news-content">
+                    <div class="news-title">NBA: Lakers vs Celtics esta noche</div>
+                    <div class="news-meta">
+                        <span>🏀 Básquetbol</span>
+                        <span>⏰ Hace 3 horas</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="news-card" onclick="window.location.href='All_Sports_Network_Website.html'">
+                <div class="news-image" style="background: linear-gradient(135deg, rgba(250, 112, 154, 0.6) 0%, rgba(254, 225, 64, 0.6) 100%), url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=360&h=180&fit=crop&q=80'); background-size: cover; background-position: center; background-blend-mode: overlay;"></div>
+                <div class="news-content">
+                    <div class="news-title">Liga MX: Tigres lidera la tabla general</div>
+                    <div class="news-meta">
+                        <span>⚽ Fútbol</span>
+                        <span>⏰ Hace 1 día</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre Nosotros</h3>
+                <ul class="footer-links">
+                    <li><a href="#acerca">Acerca de</a></li>
+                    <li><a href="#equipo">Equipo</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Deportes</h3>
+                <ul class="footer-links">
+                    <li><a href="#futbol">Fútbol</a></li>
+                    <li><a href="#basquetbol">Básquetbol</a></li>
+                    <li><a href="#beisbol">Béisbol</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Recursos</h3>
+                <ul class="footer-links">
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#api">API</a></li>
+                    <li><a href="#ayuda">Ayuda</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul class="footer-links">
+                    <li><a href="#terminos">Términos</a></li>
+                    <li><a href="#privacidad">Privacidad</a></li>
+                    <li><a href="#cookies">Cookies</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2025 All Sports Network. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script>
+        // Share buttons functionality
+        document.querySelectorAll('.share-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const text = 'Real Madrid clasifica a la final de Champions League';
+                const url = window.location.href;
+                
+                if (btn.classList.contains('share-facebook')) {
+                    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
+                } else if (btn.classList.contains('share-twitter')) {
+                    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+                } else if (btn.classList.contains('share-whatsapp')) {
+                    window.open(`https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`, '_blank');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
